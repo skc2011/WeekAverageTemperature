@@ -11,24 +11,24 @@ import XCTest
 
 class WeekAverageTemperatureTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    /*   first data set:
+     testArray = [(day: "Monday", temp: 7.0), ("Tuesday", 9), ("Wednesday", 9), ("Thursday", 10), ("Friday", 8), ("Saturday", 6), ("Sunday", 7)]
+     Expected result: "Friday"
+     
+     second data set:
+     testArray = [(day: "Monday", temp: 7.0), ("Tuesday", 9), ("Wednesday", 8), ("Thursday", 10), ("Friday", 8), ("Saturday", 6), ("Sunday", 7)]
+     Expected result: "Wednesday"
+     
+     third data set:
+     testArray = [(day: "Monday", temp: 7.0), ("Tuesday", 9), ("Wednesday", 8), ("Thursday", 10), ("Friday", 8), ("Saturday", 9), ("Sunday", 10)]
+     Expected result: "Tuesday"
+     */
+    
+    func testFindingDayWithNearestTemp() {
+        var testArray = [(day: "Monday", temp: 7.0), ("Tuesday", 9), ("Wednesday", 9), ("Thursday", 10), ("Friday", 8), ("Saturday", 6), ("Sunday", 7)]
+        let weekTemperature = WeekTemperature()
+        let firstFoundDay = weekTemperature.dayWithNearestTemp(temperatureArray: testArray)
+        
+        XCTAssert(firstFoundDay == "Friday", "The day was found incorrectly")
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
