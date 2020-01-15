@@ -25,7 +25,7 @@ class WeekAverageTemperatureTests: XCTestCase {
      */
     
     func testFindingDayWithNearestTemp() {
-        var testArray = [(day: "Monday", temp: 7.0), ("Tuesday", 9), ("Wednesday", 9), ("Thursday", 10), ("Friday", 8), ("Saturday", 6), ("Sunday", 7)]
+        let testArray = [(day: "Monday", temp: 7.0), ("Tuesday", 9), ("Wednesday", 9), ("Thursday", 10), ("Friday", 8), ("Saturday", 6), ("Sunday", 7)]
         let weekTemperature = WeekTemperature()
         let firstFoundDay = weekTemperature.dayWithNearestTemp(temperatureArray: testArray)
         
