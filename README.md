@@ -1,0 +1,2 @@
+# WeekAverageTemperature
+test task
